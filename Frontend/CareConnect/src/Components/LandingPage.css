@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&family=Great+Vibes&display=swap');
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #000;
+  overflow-x: hidden;
+}
+
+.landing-container {
+  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("https://images.pexels.com/photos/1557182/pexels-photo-1557182.jpeg?auto=compress&cs=tinysrgb&w=600");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 50px 40px;
+  border-radius: 20px;
+  max-width: 1000px;
+  width: 90%;
+  height: 60%;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content h1 {
+ font-family: 'Playfair Display', serif;
+
+  font-weight: 100%;           /* made it heavier */
+  font-size: 5rem;            /* slightly bigger */
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;        /* more spacing for boldness */
+  color: #000001;
+  text-shadow: 3px 6px 10px rgba(0, 0, 0, 0.8);
+}
+
+.content p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;           /* bolder paragraph */
+  font-size: 1.8rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+  color: #000000;
+  text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.7);
+}
+
+.btn-primary {
+  background-color: #b352d1;
+  border: none;
+  padding: 1.2rem 4rem;
+  font-size: 1.4rem;
+  color: #f0e9e9;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: 900;            /* bold button text */
+  transition: background-color 0.35s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.85);
+  letter-spacing: 1.5px;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.btn-primary:hover {
+  background-color: #dc55d3;
+  box-shadow: 0 10px 35px rgb(221, 128, 192);
+}
+
+@media (max-width: 768px) {
+  .content h1 {
+    font-size: 3.8rem;
+  }
+
+  .content p {
+    font-size: 1.4rem;
+  }
+
+  .btn-primary {
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content h1 {
+    font-size: 3rem;
+  }
+
+  .content p {
+    font-size: 1.2rem;
+  }
+
+  .btn-primary {
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+  }
+}
