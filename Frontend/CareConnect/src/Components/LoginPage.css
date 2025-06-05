@@ -1,0 +1,197 @@
+/* LoginPage.css */
+
+/* Background Setup */
+.login-page {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background: url("https://media.istockphoto.com/id/1216781322/photo/newborn-baby-girl-stock-images.jpg?b=1&s=612x612&w=0&k=20&c=DKIRX30-yzpQsNgcj6xj1zyusX9lsrbvizv36ZRY4qk=")
+    center center / cover no-repeat, 
+                linear-gradient(to bottom right, rgba(48, 25, 52, 0.8), rgba(48, 25, 52, 0.8));
+    
+  background-size: cover;
+  font-family: 'Segoe UI', Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Overlay */
+.login-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(48, 25, 52, 0.35); /* soft dark overlay */
+  z-index: 0;
+}
+
+/* Center Wrapper */
+.login-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  z-index: 1; /* Above the overlay */
+}
+
+/* Glass effect login box */
+.login-box {
+  background: rgba(255, 255, 255, 0.3); /* lighter glass */
+  backdrop-filter: blur(20px);
+  padding: 50px 40px;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 20px 60px rgba(74, 20, 140, 0.45);
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+.login-box h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #4A148C;
+  margin-bottom: 30px;
+}
+
+/* Form Styling */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form input {
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  border: 1px solid #b39ddb;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  background: #f3e5f5;
+  transition: 0.3s;
+  color: #4A148C;
+}
+
+.login-form input:focus {
+  border-color: #7e57c2;
+  outline: none;
+  background-color: white;
+}
+
+/* Button */
+.btn-primary {
+  background: linear-gradient(to right, #7e57c2, #512da8);
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to right, #512da8, #311b92);
+  box-shadow: 0 8px 18px rgba(123, 31, 162, 0.4);
+}
+
+/* Divider */
+.divider {
+  text-align: center;
+  margin: 25px 0;
+  color: #6a1b9a;
+  font-weight: 500;
+  position: relative;
+  font-size: 1rem;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  height: 1px;
+  width: 40%;
+  background: #b39ddb;
+  position: absolute;
+  top: 50%;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+/* Google login */
+.google-login {
+  display: flex;
+  justify-content: center;
+}
+
+/* Bottom Sign Up Box */
+.bottom-switch {
+  text-align: center;
+  margin-top: 35px;
+  color: #311b92;
+  font-size: 1.15rem;
+  font-weight: 600;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background-color: rgba(236, 224, 250, 0.85);
+  padding: 10px 16px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(108, 39, 187, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bottom-switch:hover {
+  background-color: rgba(236, 224, 250, 1);
+  box-shadow: 0 6px 20px rgba(108, 39, 187, 0.25);
+}
+
+.bottom-switch p {
+  margin: 0;
+}
+
+.bottom-switch span {
+  color: #6c26e4;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.bottom-switch span:hover {
+  color: #311b92;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .login-box {
+    padding: 30px 20px;
+  }
+
+  .login-box h1 {
+    font-size: 1.8rem;
+  }
+
+  .btn-primary {
+    font-size: 1rem;
+  }
+
+  .login-form input {
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  .bottom-switch {
+    font-size: 1rem;
+  }
+}

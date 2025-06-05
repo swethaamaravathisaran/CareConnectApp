@@ -1,11 +1,11 @@
-const { OAuth2Client } = require('google-auth-library');
-const User = require('../Models/User');
-const jwt = require('jsonwebtoken');
+// Controllers/authController.js
+import { OAuth2Client } from 'google-auth-library';
+import User from '../Models/User.js';
+import jwt from 'jsonwebtoken';
 
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
-// Register
-exports.register = async (req, res) => {
+export const register = async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
@@ -26,8 +26,7 @@ exports.register = async (req, res) => {
   }
 };
 
-// Login
-exports.login = async (req, res) => {
+export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
@@ -48,38 +47,35 @@ exports.login = async (req, res) => {
   }
 };
 
-// Google Login
-exports.googleLogin = async (req, res) => {
-  const { idToken } = req.body;
+export const googleLogin = async (req, res) => {
+  const { token } = req.body;
 
   try {
-    // Verify Google token
     const ticket = await client.verifyIdToken({
-      idToken,
+      idToken: token,
       audience: process.env.GOOGLE_CLIENT_ID,
     });
-    const payload = ticket.getPayload();
 
+    const payload = ticket.getPayload();
     const { email, name, sub: googleId } = payload;
 
     let user = await User.findOne({ email });
 
     if (!user) {
-      // Create user if not found
       user = new User({
         name,
         email,
-        password: googleId, // Can use sub as fallback if no password
+        password: googleId,
       });
       await user.save();
     }
 
-    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' });
+    const jwtToken = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' });
 
     res.json({
       message: 'Google login successful',
       user: { id: user._id, name: user.name, email: user.email },
-      token,
+      token: jwtToken,
     });
   } catch (error) {
     console.error('Google login error:', error);
@@ -87,8 +83,7 @@ exports.googleLogin = async (req, res) => {
   }
 };
 
-// Get Profile
-exports.getProfile = async (req, res) => {
+export const getProfile = async (req, res) => {
   try {
     const user = await User.findById(req.userId).select('-password');
     if (!user) return res.status(404).json({ message: 'User not found' });

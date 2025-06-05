@@ -1,0 +1,226 @@
+html, body ,#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+    width: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwi9ncM3RxFuOwGfFk2eQwu4-J2qvYA5O_zA&s') no-repeat center center fixed;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 0;
+}
+
+.dashboard-container {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #263238;
+  text-align: center;
+}
+
+.add-baby-btn {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  background: linear-gradient(to right, #00bfa5, #1de9b6);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  margin-bottom: 2rem;
+  transition: transform 0.2s ease;
+}
+
+.add-baby-btn:hover {
+  transform: scale(1.05);
+}
+
+.baby-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.baby-card {
+  background-color: #ffffffcc;
+  backdrop-filter: blur(4px);
+  border-radius: 16px;
+  padding: 5rem;
+  width: 300px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.baby-card:hover {
+  transform: scale(1.03);
+}
+
+.baby-photo {
+  width: 100%;
+  height: 200px;
+  
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.baby-card h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #263238;
+}
+
+.baby-card p {
+  margin: 0.2rem 0;
+  font-size: 0.95rem;
+  color: #455a64;
+}
+
+.baby-actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.baby-actions button {
+  flex: 1;
+  padding: 0.5rem;
+  margin: 0 0.25rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.baby-actions .edit-btn {
+  background-color: #fbc02d;
+}
+
+.baby-actions .edit-btn:hover {
+  background-color: #f9a825;
+}
+
+.baby-actions .delete-btn {
+  background-color: #e53935;
+}
+
+.baby-actions .delete-btn:hover {
+  background-color: #c62828;
+}
+
+.fullscreen-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 999;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+.fullscreen-form-content {
+  background-color: #ffffffee;
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  position: relative;
+  animation: slideDown 0.3s ease-in-out;
+}
+
+.close-form-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: #ff1744;
+  color: white;
+  border: none;
+  font-size: 20px;
+  width: 36px;
+  height: px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form input,
+form select {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+form button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #26a69a;
+  color: white;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #00796b;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .baby-card {
+    width: 90%;
+  }
+
+  .fullscreen-form-content {
+    width: 95%;
+  }
+}

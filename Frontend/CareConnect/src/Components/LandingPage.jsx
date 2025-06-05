@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./LandingPage.css";
 
 const LandingPage = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="landing-container">
       <div className="overlay">
@@ -10,7 +13,7 @@ const LandingPage = () => {
           <p>Your trusted baby care companion app</p>
           <button
             className="btn-primary"
-            onClick={() => alert("Get Started clicked!")}
+            onClick={() => navigate("/login")}
           >
             Get Started
           </button>
