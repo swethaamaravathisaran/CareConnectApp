@@ -1,4 +1,3 @@
-// backend/index.js
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
@@ -9,7 +8,6 @@ import axios from 'axios';
 import babyRoutes from './Routes/babyRoutes.js';
 import authRoutes from './Routes/authRoutes.js';
 import vaccinationRoutes from './Routes/vaccinationRoutes.js';
-
 import lullabyRoutes from './Routes/lullabyRoutes.js';
 
 dotenv.config();
@@ -17,7 +15,10 @@ const app = express();
 
 app.use(
   cors({
-    origin: 'http://localhost:5173',
+    origin: [
+      'http://localhost:5173',
+      'https://care-connect-app-jjd8.vercel.app'
+    ],
     credentials: true,
   })
 );
@@ -33,10 +34,9 @@ mongoose
 app.use('/api/auth', authRoutes);
 app.use('/api/babies', babyRoutes);
 app.use('/api/vaccinations', vaccinationRoutes);
-
 app.use('/api/lullabies', lullabyRoutes);
 
-// SendGrid setup...
+// SendGrid email endpoint
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 app.post('/api/send-email', async (req, res) => {
   const { to, subject, text } = req.body;
@@ -58,7 +58,7 @@ app.post('/api/send-email', async (req, res) => {
   }
 });
 
-// Root and 404
+// Root and fallback
 app.get('/', (req, res) => {
   res.send('🚀 CareConnect API is running');
 });
