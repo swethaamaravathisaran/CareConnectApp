@@ -4,7 +4,7 @@ import {
   getBabyProfiles,
   updateBabyProfile,
   deleteBabyProfile
-} from '../controllers/babyController.js';
+} from '../Controllers/babyController.js';
 
 import protect from '../Middleware/authMiddleware.js';
 
