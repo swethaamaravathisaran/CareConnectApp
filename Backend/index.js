@@ -18,7 +18,8 @@ app.use(
     origin: [
       'http://localhost:5173',
       'https://care-connect-app-jjd8.vercel.app',
-      'https://care-connect-app-jjd8-swethas-projects-c63ca06f.vercel.app'
+      'https://care-connect-app-jjd8-swethas-projects-c63ca06f.vercel.app',
+      'https://care-connect-app-iiio.vercel.app'
     ],
     credentials: true,
   })
