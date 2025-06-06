@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './BabyDashboard.css';
+import './BabyDashBoard.css';
 
 const BabyForm = ({ onSubmit, initialData, clearEdit }) => {
   const [formData, setFormData] = useState({
