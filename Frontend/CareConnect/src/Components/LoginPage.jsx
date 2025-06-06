@@ -3,6 +3,8 @@ import { GoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import './LoginPage.css';
 
+const API_BASE = 'https://careconnectapp-9udy.onrender.com';
+
 const LoginPage = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState('');
@@ -11,9 +13,13 @@ const LoginPage = () => {
 
   const handleGoogleSuccess = async (credentialResponse) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/google-login', {
-        token: credentialResponse.credential,
-      });
+      const response = await axios.post(
+        `${API_BASE}/api/auth/google-login`,
+        {
+          token: credentialResponse.credential,
+        },
+        { withCredentials: true }
+      );
 
       localStorage.setItem('token', response.data.token);
       alert('Login successful!');
@@ -27,10 +33,11 @@ const LoginPage = () => {
   const handleEmailLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        `${API_BASE}/api/auth/login`,
+        { email, password },
+        { withCredentials: true }
+      );
 
       localStorage.setItem('token', response.data.token);
       alert('Login successful!');
@@ -44,11 +51,11 @@ const LoginPage = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', {
-        name,
-        email,
-        password,
-      });
+      const response = await axios.post(
+        `${API_BASE}/api/auth/register`,
+        { name, email, password },
+        { withCredentials: true }
+      );
 
       localStorage.setItem('token', response.data.token);
       alert('Registration successful!');

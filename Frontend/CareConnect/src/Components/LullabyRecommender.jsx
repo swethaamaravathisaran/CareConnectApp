@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './LullabyRecommender.css';
 
+const API_BASE = 'https://careconnectapp-9udy.onrender.com';
+
 const LullabyRecommender = () => {
   const [mood, setMood] = useState('');
   const [reply, setReply] = useState('');
@@ -10,14 +12,13 @@ const LullabyRecommender = () => {
   const [btnHover, setBtnHover] = useState(false);
   const [saveHover, setSaveHover] = useState(false);
 
-  // Expanded moods list to match backend
   const moods = ['calm', 'sleepy', 'playful', 'joyful', 'soothing'];
 
   const getLullaby = async () => {
     if (!mood) return;
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/api/lullabies', { mood });
+      const res = await axios.post(`${API_BASE}/api/lullabies`, { mood });
       setReply(res.data.reply);
     } catch (error) {
       console.error('Error fetching lullaby:', error);
