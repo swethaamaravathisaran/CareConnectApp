@@ -1,56 +1,68 @@
+// backend/index.js
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import sgMail from '@sendgrid/mail';
+import axios from 'axios';
 
 import babyRoutes from './Routes/babyRoutes.js';
 import authRoutes from './Routes/authRoutes.js';
-// import feedingRoutes from './Routes/feedingRoutes.js';
-// import sleepRoutes from './Routes/sleepRoutes.js';
-// import diaperRoutes from './Routes/diaperRoutes.js';
-// import healthRoutes from './Routes/healthRoutes.js';
-// import journalRoutes from './Routes/journalRoutes.js';
+import vaccinationRoutes from './Routes/vaccinationRoutes.js';
+
+import lullabyRoutes from './Routes/lullabyRoutes.js';
 
 dotenv.config();
-
 const app = express();
 
-// Enable CORS
 app.use(
   cors({
-    origin: 'http://localhost:5173', // Replace with your frontend's URL
+    origin: 'http://localhost:5173',
     credentials: true,
   })
 );
-
-// Middleware
 app.use(express.json());
 
-// Connect to MongoDB
+// MongoDB connection
 mongoose
-  .connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(process.env.MONGO_URI, { useNewUrlParser: true })
   .then(() => console.log('✅ MongoDB connected successfully'))
   .catch((err) => console.error('❌ MongoDB connection failed:', err));
 
-// Use Routes
+// Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/babies', babyRoutes);
-// app.use('/api/feedings', feedingRoutes);
-// app.use('/api/sleep', sleepRoutes);
-// app.use('/api/diapers', diaperRoutes);
-// app.use('/api/health', healthRoutes);
-// app.use('/api/journal', journalRoutes);
+app.use('/api/vaccinations', vaccinationRoutes);
 
-// Root route
+app.use('/api/lullabies', lullabyRoutes);
+
+// SendGrid setup...
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+app.post('/api/send-email', async (req, res) => {
+  const { to, subject, text } = req.body;
+  if (!to || !subject || !text) return res.status(400).json({ error: 'Missing required fields' });
+
+  const msg = {
+    to,
+    from: process.env.SENDGRID_SENDER_EMAIL,
+    subject,
+    text,
+    html: `<p>${text.replace(/\n/g, '<br>')}</p>`,
+  };
+
+  try {
+    await sgMail.send(msg);
+    res.status(200).json({ message: '✅ Email sent successfully' });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to send email', details: error.message });
+  }
+});
+
+// Root and 404
 app.get('/', (req, res) => {
-  res.send('🚀 CareConnect API is running and connected to MongoDB');
+  res.send('🚀 CareConnect API is running');
 });
+app.use((req, res) => res.status(404).json({ error: 'Route not found' }));
 
-// Start server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`🚀 Server is running on port ${PORT}`);
-});
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));

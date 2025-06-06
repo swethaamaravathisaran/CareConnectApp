@@ -1,0 +1,227 @@
+/* Reset and base styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Disable page scroll */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Static full viewport page background */
+.page-wrapper {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwi9ncM3RxFuOwGfFk2eQwu4-J2qvYA5O_zA&s');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align container to top */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Scrollable container inside fixed page */
+.container {
+  width: 90%;
+  max-width: 950px;
+  max-height: 90vh; /* Limit height to viewport */
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(74, 144, 226, 0.3);
+  padding: 32px;
+  box-sizing: border-box;
+  backdrop-filter: blur(8px);
+  overflow-y: auto; /* Enable vertical scroll */
+  -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+}
+
+/* Scrollbar styling */
+.container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: rgba(59, 89, 152, 0.5);
+  border-radius: 4px;
+}
+
+.container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Header style */
+.header {
+  font-size: 34px;
+  margin-bottom: 24px;
+  text-align: center;
+  color: #3b5998;
+  user-select: none;
+  text-shadow: 1px 1px 4px #aac8ff;
+  font-weight: 700;
+}
+
+/* Select input */
+.select {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 2px solid #aac8ff;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 24px;
+  box-shadow: inset 0 0 8px #dbefff;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.select:focus {
+  border-color: #3b5998;
+}
+
+/* Button style */
+.button {
+  background-color: #3b5998;
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(59, 89, 152, 0.6);
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.15s;
+  user-select: none;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.button:hover:not(:disabled) {
+  background-color: #2e4476;
+  box-shadow: 0 8px 20px rgba(46, 68, 118, 0.8);
+  transform: scale(1.05);
+}
+
+.button:disabled {
+  background-color: #aac8ff;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Reply container */
+.reply-container {
+  margin-top: 12px;
+  padding: 24px;
+  background-color: rgba(216, 231, 255, 0.9);
+  border-radius: 14px;
+  box-shadow: inset 0 0 15px #a5c2ff;
+  font-size: 18px;
+  color: #1a1a1a;
+  line-height: 1.6;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+/* Save button */
+.save-button {
+  margin-top: 18px;
+  background-color: #ff6584;
+  border: none;
+  padding: 10px 28px;
+  font-size: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 5px 14px rgba(255, 101, 132, 0.7);
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.15s;
+  user-select: none;
+}
+
+.save-button:hover {
+  background-color: #e34a6a;
+  box-shadow: 0 7px 20px rgba(227, 74, 106, 0.9);
+  transform: scale(1.05);
+}
+
+/* Favorites container */
+.favorites-container {
+  margin-top: 40px;
+  background-color: rgba(233, 240, 255, 0.9);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 6px 25px rgba(74, 144, 226, 0.15);
+  opacity: 1;
+  transition: opacity 1.2s ease;
+}
+
+.favorite-title {
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #345089;
+  user-select: none;
+  text-shadow: 1px 1px 2px #a3b8d6;
+}
+
+.favorite-list {
+  list-style-type: disc;
+  padding-left: 24px;
+  color: #23406a;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.favorite-item {
+  margin-bottom: 14px;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .page-wrapper {
+    padding: 10px;
+  }
+
+  .container {
+    width: 95%;
+    padding: 20px;
+    max-height: 85vh;
+    margin: 20px 0;
+  }
+
+  .header {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .select {
+    padding: 10px 14px;
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  .button {
+    padding: 12px 24px;
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  .reply-container {
+    font-size: 16px;
+  }
+
+  .save-button {
+    padding: 8px 24px;
+    font-size: 14px;
+  }
+
+  .favorite-title {
+    font-size: 20px;
+  }
+
+  .favorite-list {
+    font-size: 15px;
+  }
+}
