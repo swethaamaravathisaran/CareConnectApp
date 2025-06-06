@@ -9,7 +9,7 @@ import 'react-vertical-timeline-component/style.min.css';
 import './BabyDashBoard.css';
 import BabyForm from './BabyForm';
 
-const API_BASE = 'https://careconnectapp-9udy.onrender.com';
+const API_BASE = 'https://careconnectapp-9udy.onrender.com/api';
 
 const getToken = () => localStorage.getItem('token');
 
