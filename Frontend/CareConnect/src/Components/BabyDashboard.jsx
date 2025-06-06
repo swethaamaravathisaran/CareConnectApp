@@ -6,7 +6,7 @@ import {
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import './BabyDashboard.css';
+import './BabyDashBoard.css';
 import BabyForm from './BabyForm';
 
 const API_BASE = 'https://careconnectapp-9udy.onrender.com';
