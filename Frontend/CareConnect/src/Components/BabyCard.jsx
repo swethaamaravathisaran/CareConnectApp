@@ -1,5 +1,5 @@
 import React from 'react';
-import './BabyDashboard.css';
+import './BabyDashBoard.css';
 
 const BabyCard = ({ baby, onEdit, onDelete }) => {
   return (
