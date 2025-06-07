@@ -566,71 +566,7 @@ h1 {
   }
 }
 
-/* ===== Responsive Adjustments ===== */
-@media (max-width: 900px) {
-  .baby-card {
-    flex-direction: column;
-    padding: 1.8rem 2rem;
-  }
-
-  .divider {
-    display: none;
-  }
-
-  .vaccination-section {
-    border-left: none;
-    padding-left: 0;
-    border-top: 1px solid #ccc;
-    margin-top: 1.3rem;
-    padding-top: 1.3rem;
-  }
-
-  .right-section {
-    flex-direction: column;
-    gap: 1.8rem;
-  }
-
-  .notes-divider {
-    display: none;
-  }
-
-  .baby-cards {
-    padding: 1rem;
-  }
-
-  .baby-card,
-  .modal-content {
-    width: 95%;
-  }
-
-  .notes-card {
-    max-width: 100%;
-    min-height: auto;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 2rem;
-  }
-
-  .add-baby-btn {
-    padding: 0.9rem 1.8rem;
-    font-size: 1rem;
-  }
-
-  .baby-actions button {
-    font-size: 0.9rem;
-    padding: 0.5rem 0;
-  }
-
-  .modal-content {
-    padding: 2rem 2rem;
-    width: 95vw;
-    height: auto;
-    max-height: 85vh;
-  }
-}
+/* ===== Lullaby Section ===== */
 .lullaby-section {
   margin-top: 20px;
   padding: 15px 20px;
@@ -671,4 +607,208 @@ h1 {
 
 .go-to-lullaby-btn:hover {
   background-color: #27ae60;
+}
+/* ===== Responsive Media Queries ===== */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    padding: 6px 20px;
+  }
+
+  .add-baby-btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .baby-card {
+    padding: 1.2rem;
+  }
+
+  .baby-photo {
+    height: 180px;
+  }
+
+  .baby-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .baby-card p {
+    font-size: 0.95rem;
+  }
+
+  .baby-actions {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .baby-actions button {
+    font-size: 0.95rem;
+    padding: 0.6rem 0;
+  }
+
+  .vaccination-section h4,
+  .notes-header h4 {
+    font-size: 1.1rem;
+  }
+
+  .notes-card {
+    padding: 1.2rem;
+    width: 100%;
+    max-width: 100%;
+    min-height: 350px;
+  }
+
+  .notes-form textarea {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .notes-form button {
+    font-size: 0.95rem;
+  }
+
+  .logout-btn {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    top: 15px;
+    right: 15px;
+  }
+}
+
+/* Small devices */
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .add-baby-btn {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .dashboard-container {
+    padding: 1rem;
+  }
+
+  .baby-card {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .notes-card {
+    padding: 1rem;
+  }
+
+  .note-item {
+    font-size: 0.9rem;
+  }
+
+  .note-item-actions button {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .vaccination-list button {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .logout-btn {
+    font-size: 0.8rem;
+  }
+  .modal-content {
+    padding: 1.5rem 1rem;
+    width: 98vw;
+    max-height: 96vh;
+    border-radius: 12px;
+  }
+
+  .modal-close-btn {
+    font-size: 1.8rem;
+    top: 10px;
+    right: 10px;
+  }
+
+  .baby-form label {
+    font-size: 0.95rem;
+  }
+
+  .baby-form input,
+  .baby-form select,
+  .baby-form textarea {
+    font-size: 0.95rem;
+    padding: 0.7rem 0.9rem;
+  }
+
+  .baby-form button {
+    font-size: 0.95rem;
+    padding: 0.85rem;
+  }
+
+  .baby-form button[type="button"] {
+    margin-top: 0.6rem;
+  }
+
+  .lullaby-section {
+    padding: 10px 12px;
+    margin-top: 16px;
+  }
+
+  .lullaby-toggle-btn,
+  .go-to-lullaby-btn {
+    font-size: 0.9rem;
+    padding: 7px 10px;
+    border-radius: 5px;
+  }
+
+  .lullaby-content {
+    font-size: 0.9rem;
+  }
+  /* ===== MOBILE RESPONSIVE STYLES ===== */
+@media (max-width: 600px) {
+  .modal-content {
+    padding: 2rem 1.5rem;
+    width: 95vw;
+    max-height: 95vh;
+    border-radius: 14px;
+  }
+
+  .modal-close-btn {
+    font-size: 2rem;
+    top: 12px;
+    right: 12px;
+  }
+
+  .baby-form label {
+    font-size: 1rem;
+  }
+
+  .baby-form input,
+  .baby-form select,
+  .baby-form textarea {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .baby-form button {
+    font-size: 1rem;
+    padding: 0.9rem;
+  }
+
+  .lullaby-section {
+    padding: 12px 14px;
+  }
+
+  .lullaby-toggle-btn,
+  .go-to-lullaby-btn {
+    font-size: 0.95rem;
+    padding: 8px 12px;
+  }
+
+  .lullaby-content {
+    font-size: 0.95rem;
+  }
+}
+  
 }
