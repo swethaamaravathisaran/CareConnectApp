@@ -25,7 +25,7 @@ body::before {
 
 /* ===== Dashboard Container ===== */
 .dashboard-container {
-  position: flex;
+  position: relative;
   z-index: 1;
   height: 100%;
   width: 100%;
@@ -573,6 +573,7 @@ h1 {
   background-color: #f0f8ff;
   border-radius: 8px;
   border: 1px solid #a9cce3;
+  position: relative;
 }
 
 .lullaby-toggle-btn {
@@ -682,6 +683,7 @@ h1 {
 @media screen and (max-width: 480px) {
   .dashboard-container {
     padding: 0.9rem;
+    position: relative; 
   }
 
   h1 {
@@ -690,10 +692,12 @@ h1 {
   }
 
   .logout-btn {
-    top: 10px;
-    right: 10px;
-    padding: 6px 12px;
-    font-size: 0.9rem;
+    position: static; /* resets positioning */
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 1rem;
+    padding: 12px;
   }
 
   .add-baby-btn {
@@ -848,8 +852,9 @@ h1 {
     padding: 0.85rem;
   }
   .lullaby-section {
-    padding: 10px 12px;
+    padding: 8px 8px;
     margin-top: 16px;
+    margin-bottom: 10px;
   }
 
   .lullaby-toggle-btn,
