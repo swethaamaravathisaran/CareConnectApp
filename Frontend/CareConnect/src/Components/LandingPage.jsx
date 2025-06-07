@@ -7,14 +7,12 @@ const LandingPage = () => {
 
   return (
     <div className="landing-container">
+      <div className="app-brand">CareConnect</div>
       <div className="overlay">
         <div className="content">
           <h1>Welcome to CareConnect</h1>
           <p>Your trusted baby care companion app</p>
-          <button
-            className="btn-primary"
-            onClick={() => navigate("/login")}
-          >
+          <button className="btn-primary" onClick={() => navigate("/login")}>
             Get Started
           </button>
         </div>

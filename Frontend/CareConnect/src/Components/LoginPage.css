@@ -173,25 +173,71 @@
 }
 
 /* Responsive Design */
-@media (max-width: 480px) {
+
+ 
+@media (max-width: 768px) {
   .login-box {
-    padding: 30px 20px;
+    padding: 32px 24px;
+    width: 90%;
+    max-width: 90%;
   }
 
   .login-box h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .btn-primary {
     font-size: 1rem;
-  }
-
-  .login-form input {
-    padding: 12px;
-    font-size: 1rem;
+    padding: 14px;
   }
 
   .bottom-switch {
     font-size: 1rem;
+    padding: 8px 12px;
+  }
+
+  .divider {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-page {
+    background-position: center top;
+    background-size: cover;
+  }
+
+  .login-wrapper {
+    padding: 10px;
+  }
+
+  .login-box {
+    padding: 24px 16px;
+    border-radius: 20px;
+  }
+
+  .login-box h1 {
+    font-size: 1.6rem;
+  }
+
+  .login-form input {
+    padding: 12px 14px;
+    font-size: 0.95rem;
+  }
+
+  .btn-primary {
+    font-size: 0.95rem;
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .bottom-switch {
+    font-size: 0.95rem;
+    margin-top: 25px;
+  }
+
+  .divider::before,
+  .divider::after {
+    width: 30%;
   }
 }
