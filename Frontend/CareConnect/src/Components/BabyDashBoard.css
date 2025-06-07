@@ -681,228 +681,162 @@ h1 {
 
 /* ===== Mobile Responsive (max-width: 480px) ===== */
 @media screen and (max-width: 480px) {
+  /* Base dashboard container */
   .dashboard-container {
-    padding: 0.8rem;
-    position: relative; 
-  }
-
- .dashboard-container {
-  padding: 0.9rem;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Heading aligned with container */
-.dashboard-container h1 {
-  font-size: 1.8rem;
-  padding: 6px 0;
-  text-align: center;
-  margin-bottom: 1rem;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Logout button fully responsive and aligned */
-.logout-btn {
-  position: relative;
-  display: block;
-  width: 100%;
-  font-size: 1rem;
-  padding: 12px;
-  margin: 10px 0;
-  box-sizing: border-box;
-  background-color: #ff4d4f; /* or your theme color */
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-}
-
-/* Add Baby Button responsive */
-.add-baby-btn {
-  width: 100%;
-  padding: 1rem;
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-  box-sizing: border-box;
-  background-color: #1890ff;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-}
-
-  /* Baby cards container */
-  .baby-cards {
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    padding: 0 0.5rem;
+    align-items: center;
   }
 
-  /* Baby card layout: stack sections vertically */
-  .baby-card {
-    flex-direction: column;
-    padding: 1.2rem 1.5rem;
-    max-width: 100%;
-    gap: 1rem;
-  }
-
-  /* Remove horizontal flex for right-section and vertical divider */
-  .right-section {
-    flex-direction: column;
-    gap: 1.2rem;
-  }
-
-  .notes-divider {
-    display: none;
-  }
-
-  /* Make each section full width */
-  .baby-info, 
-  .vaccination-section, 
-  .notes-card {
-    flex: none;
-    min-width: auto;
+  /* Header */
+  .dashboard-container h1 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1rem;
     width: 100%;
   }
 
-  /* Baby photo smaller height */
+  /* Logout button */
+  .logout-btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  /* Add Baby button */
+  .add-baby-btn {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: #1890ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  /* Baby Cards */
+  .baby-cards {
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .baby-card {
+    flex-direction: column;
+    padding: 1.2rem;
+    gap: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .right-section,
+  .baby-info,
+  .vaccination-section,
+  .notes-card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
   .baby-photo {
     height: 160px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
   }
 
-  /* Adjust Baby Card headings */
-  .baby-card h3 {
-    font-size: 1.3rem;
-  }
-
-  .baby-card p {
-    font-size: 0.9rem;
-  }
-
-  /* Buttons inside baby actions */
-  .baby-actions button {
-    font-size: 1rem;
-    padding: 0.6rem 0;
-  }
-
-  /* Vaccination Section adjustments */
-  .vaccination-section {
-    padding-left: 0;
-    border-left: none;
-  }
-
-  .vaccination-section h4 {
-    font-size: 1.1rem;
-  }
-
-  .vaccination-section input,
-  .vaccination-section button {
-    font-size: 0.95rem;
-    padding: 0.5rem 0.7rem;
-  }
-
-  .vaccination-list li {
-    font-size: 0.9rem;
-  }
-
-  .vaccination-list button {
-    font-size: 0.8rem;
-    padding: 0.35rem 0.6rem;
-  }
-
-  /* Notes Card */
-  .notes-card {
-    max-width: 90%;
-    min-height: auto;
-    padding: 1.2rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  .notes-header h4 {
-    font-size: 1.1rem;
-  }
-
-  .note-item {
-    font-size: 0.9rem;
-    padding: 0.75rem 0.9rem;
-  }
-
+  .baby-actions button,
+  .vaccination-section button,
+  .notes-form button,
   .note-item-actions button {
-    font-size: 0.75rem;
-    padding: 0.3rem 0.5rem;
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  /* Notes Section */
+  .notes-card {
+    max-width: 100%;
+    font-size: 0.9rem;
+    padding: 1rem;
+    background: #fafafa;
+    border-radius: 8px;
   }
 
   .notes-form textarea {
-    width: 80%;
-    min-height: 80px;
-    font-size: 0.95rem;
-    padding: 0.7rem 0.9rem;
+    width: 90%;
+    font-size: 1rem;
+    padding: 0.8rem;
+    border-radius: 6px;
   }
 
-  .notes-form button {
-    font-size: 0.95rem;
-    padding: 0.7rem 1rem;
-  }
-
-  /* Modal content adjustments */
+  /* Modal */
   .modal-content {
-    width: 85vw;
+    width: 90vw;
+    padding: 1.5rem;
     max-height: 90vh;
-    padding: 2rem 2rem;
+    overflow-y: auto;
     border-radius: 12px;
   }
 
   .modal-close-btn {
-    font-size: 2rem;
-    top: 8px;
-    right: 8px;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 10px;
+    right: 12px;
   }
 
-  /* Baby form fields smaller font and padding */
-  .baby-form label {
-    font-size: 1rem;
-  }
-
-  .baby-form input,
-  .baby-form select,
-  .baby-form textarea {
-    font-size: 1rem;
-    padding: 0.7rem 1rem;
-    
-  }
-
-  .baby-form button {
-    font-size: 1rem;
-    padding: 0.85rem;
-  }
+  /* ========== 🎵 Lullaby Section ========== */
   .lullaby-section {
-  width: 90%;
-  padding: 12px 16px;
-  margin: 16px 0;
-  box-sizing: border-box;
-  background-color: #f9f9f9; /* optional for visual clarity */
-  border-radius: 8px;
-  position: relative;
-}
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: #fff0f6;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(255, 105, 180, 0.15);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-/* Make buttons responsive and neatly aligned */
-.lullaby-toggle-btn,
-.go-to-lullaby-btn {
-  width: 100%;
-  font-size: 1rem;
-  padding: 10px 14px;
-  margin-top: 10px;
-  border-radius: 6px;
-  box-sizing: border-box;
-}
+  .lullaby-toggle-btn,
+  .go-to-lullaby-btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.8rem;
+    margin-top: 0.8rem;
+    background-color: #d63384;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    text-align: center;
+  }
 
-/* Make lullaby content text scale nicely */
-.lullaby-content {
-  font-size: 0.95rem;
-  line-height: 1.4;
-  word-wrap: break-word;
-  margin-top: 10px;
-  width: 100%;
+  .lullaby-content {
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 1rem;
+    padding: 0.8rem;
+    font-size: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    line-height: 1.5;
+    color: #333;
+    box-sizing: border-box;
+  }
 }
-
-}
-
