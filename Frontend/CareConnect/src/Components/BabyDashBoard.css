@@ -686,26 +686,49 @@ h1 {
     position: relative; 
   }
 
-  h1 {
-    font-size: 1.8rem;
-    padding: 6px 25px;
-  }
+ .dashboard-container {
+  padding: 0.9rem;
+  width: 100%;
+  box-sizing: border-box;
+}
 
-  .logout-btn {
-    position: relative; /* resets positioning */
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-    font-size: 1rem;
-    padding: 12px;
-  }
+/* Heading aligned with container */
+.dashboard-container h1 {
+  font-size: 1.8rem;
+  padding: 6px 0;
+  text-align: center;
+  margin-bottom: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
 
-  .add-baby-btn {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-  }
+/* Logout button fully responsive and aligned */
+.logout-btn {
+  position: relative;
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  padding: 12px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  background-color: #ff4d4f; /* or your theme color */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+}
+
+/* Add Baby Button responsive */
+.add-baby-btn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  box-sizing: border-box;
+  background-color: #1890ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+}
 
   /* Baby cards container */
   .baby-cards {
