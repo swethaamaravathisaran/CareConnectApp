@@ -154,12 +154,13 @@ html, body, #root {
   .landing-container {
     padding: 10px;
     justify-content: center;
+    height: 80%;
   }
 
   .overlay {
     padding: 30px 15px;
     border-radius: 20px;
-    height: 95%;
+    height: 100%;
     width: 80%;
   }
 
