@@ -149,7 +149,6 @@ html, body, #root {
     left: 25px;
   }
 }
-
 /* Mobile */
 @media (max-width: 480px) {
   .landing-container {

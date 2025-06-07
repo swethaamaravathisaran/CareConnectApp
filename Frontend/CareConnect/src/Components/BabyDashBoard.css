@@ -681,7 +681,7 @@ h1 {
 /* ===== Mobile Responsive (max-width: 480px) ===== */
 @media screen and (max-width: 480px) {
   .dashboard-container {
-    padding: 1rem;
+    padding: 0.9rem;
   }
 
   h1 {
@@ -784,7 +784,7 @@ h1 {
 
   /* Notes Card */
   .notes-card {
-    max-width: 100%;
+    max-width: 90%;
     min-height: auto;
     padding: 1.2rem 1rem;
     font-size: 0.9rem;
@@ -805,7 +805,7 @@ h1 {
   }
 
   .notes-form textarea {
-    width: 100%;
+    width: 80%;
     min-height: 80px;
     font-size: 0.95rem;
     padding: 0.7rem 0.9rem;
@@ -818,7 +818,7 @@ h1 {
 
   /* Modal content adjustments */
   .modal-content {
-    width: 95vw;
+    width: 85vw;
     max-height: 90vh;
     padding: 2rem 2rem;
     border-radius: 12px;
@@ -840,6 +840,7 @@ h1 {
   .baby-form textarea {
     font-size: 1rem;
     padding: 0.7rem 1rem;
+    
   }
 
   .baby-form button {
